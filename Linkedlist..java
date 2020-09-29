@@ -104,7 +104,7 @@ class linkedlist1
 		operation o=new operation();
 		do
 		{
-			System.out.println("1.insert\n2.delete\n3.display\n4.insertafter\n5.insert_last\n6.delete_last\n8.exit");
+			System.out.println("1.insert\n2.delete\n3.display\n4.insertafter\n5.insert_last\n6.delete_last\n7.exit");
 			ch=s.nextInt();
 			switch(ch)
 			{ 
@@ -136,12 +136,8 @@ class linkedlist1
 				 case 6:
 				        o.delete_last();
 				        break;
-				 case 7:
-				        System.out.println("enter a key");
-				        int db=s.nextInt();
-				        o.delete_node(db);
-				        break;
+				 
             }
-		}while(ch<8);
+		}while(ch<7);
 	}
 }
