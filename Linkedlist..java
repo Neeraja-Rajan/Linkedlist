@@ -42,6 +42,31 @@ class operation
 			ptr=ptr.next;
 		}
 	}
+ 
+ 	void delete_node(int key)
+       {
+    	if(start==null)
+    	{
+    		System.out.println("empty list");
+    		return;
+    	}
+    	if(start.data==key)
+    	{
+    		start=start.next;
+    		return;
+    	}
+    	Node ptr=start;
+    	while(ptr.next!=null)
+    	{
+    		if(ptr.next.data==key)
+    		{
+    			ptr.next=ptr.next.next;
+    			return;
+    		}
+    		ptr=ptr.next;
+    	}
+    	System.out.println("key is not found");
+      }
 	void insertafter(int key,int data)
 	{
 		if(start==null)
@@ -104,7 +129,7 @@ class linkedlist1
 		operation o=new operation();
 		do
 		{
-			System.out.println("1.insert\n2.delete\n3.display\n4.insertafter\n5.insert_last\n6.delete_last\n7.exit");
+			System.out.println("1.insert\n2.delete\n3.display\n4.insertafter\n5.insert_last\n6.delete_last\n7.deletenode\n8.exit");
 			ch=s.nextInt();
 			switch(ch)
 			{ 
@@ -135,6 +160,12 @@ class linkedlist1
 				        break;
 				 case 6:
 				        o.delete_last();
+				        break;
+					
+				case 7:
+				        System.out.println("enter a key");
+				        int db=s.nextInt();
+				        o.delete_node(db);
 				        break;
 				 
             }
